@@ -1,6 +1,7 @@
 package com.hightech.escala_hospitalar.dto;
 
-import com.hightech.escala_hospitalar.domain.Categoria;
+
+import com.hightech.escala_hospitalar.enuns.Categoria;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;

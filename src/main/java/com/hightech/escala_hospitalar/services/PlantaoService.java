@@ -1,24 +1,22 @@
-package com.hightech.escala_hospitalar.service;
+package com.hightech.escala_hospitalar.services;
 
-import com.hightech.escala_hospitalar.domain.Plantao;
-import com.hightech.escala_hospitalar.domain.Profissional;
-import com.hightech.escala_hospitalar.dto.EscalaSemanalResponse;
-import com.hightech.escala_hospitalar.dto.LinhaProfissionalResponse;
-import com.hightech.escala_hospitalar.dto.PlantaoRequest;
-import com.hightech.escala_hospitalar.dto.PlantaoResponse;
-import com.hightech.escala_hospitalar.dto.ProfissionalResponse;
-import com.hightech.escala_hospitalar.exception.ResourceNotFoundException;
-import com.hightech.escala_hospitalar.exception.RegraDeNegocioException;
-import com.hightech.escala_hospitalar.repository.PlantaoRepository;
-import com.hightech.escala_hospitalar.repository.ProfissionalRepository;
+
+import com.hightech.escala_hospitalar.dto.*;
+import com.hightech.escala_hospitalar.entities.Plantao;
+import com.hightech.escala_hospitalar.entities.Profissional;
+import com.hightech.escala_hospitalar.exceptions.RegraDeNegocioException;
+import com.hightech.escala_hospitalar.exceptions.ResourceNotFoundException;
+import com.hightech.escala_hospitalar.repositories.PlantaoRepository;
+import com.hightech.escala_hospitalar.repositories.ProfissionalRepository;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.temporal.TemporalAdjusters;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class PlantaoService {
@@ -86,8 +84,8 @@ public class PlantaoService {
     private void validarDuplicidade(Long profissionalId, LocalDate data, PlantaoRequest request) {
         if (plantaoRepository.existsByProfissionalIdAndDataAndTurno(
                 profissionalId, data, request.turno())) {
-            throw new RegraDeNegocioException(
-                    "Profissional já possui plantão em " + data + " no turno " + request.turno());
+            throw new RegraDeNegocioException("Profissional já possui plantão em " + data + " no turno " + request.turno());
+
         }
     }
 

@@ -1,7 +1,9 @@
 package com.hightech.escala_hospitalar.dto;
 
-import com.hightech.escala_hospitalar.domain.Plantao;
-import com.hightech.escala_hospitalar.domain.Turno;
+
+import com.hightech.escala_hospitalar.entities.Plantao;
+import com.hightech.escala_hospitalar.enuns.Turno;
+
 import java.time.LocalDate;
 
 public record PlantaoResponse(

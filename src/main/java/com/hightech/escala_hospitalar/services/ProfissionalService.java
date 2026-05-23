@@ -1,15 +1,17 @@
-package com.hightech.escala_hospitalar.service;
+package com.hightech.escala_hospitalar.services;
 
-import com.hightech.escala_hospitalar.domain.Categoria;
-import com.hightech.escala_hospitalar.domain.Profissional;
+
 import com.hightech.escala_hospitalar.dto.ProfissionalRequest;
 import com.hightech.escala_hospitalar.dto.ProfissionalResponse;
-import com.hightech.escala_hospitalar.exception.RegraDeNegocioException;
-import com.hightech.escala_hospitalar.exception.ResourceNotFoundException;
-import com.hightech.escala_hospitalar.repository.ProfissionalRepository;
-import java.util.List;
+import com.hightech.escala_hospitalar.entities.Profissional;
+import com.hightech.escala_hospitalar.enuns.Categoria;
+import com.hightech.escala_hospitalar.exceptions.RegraDeNegocioException;
+import com.hightech.escala_hospitalar.exceptions.ResourceNotFoundException;
+import com.hightech.escala_hospitalar.repositories.ProfissionalRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Service
 public class ProfissionalService {

@@ -1,7 +1,8 @@
 package com.hightech.escala_hospitalar.dto;
 
-import com.hightech.escala_hospitalar.domain.Categoria;
-import com.hightech.escala_hospitalar.domain.Profissional;
+
+import com.hightech.escala_hospitalar.entities.Profissional;
+import com.hightech.escala_hospitalar.enuns.Categoria;
 
 public record ProfissionalResponse(
         Long id,
